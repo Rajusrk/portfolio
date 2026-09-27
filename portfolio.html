@@ -307,7 +307,7 @@
           <span class="chip">CSS</span>
           <span class="chip">JavaScript</span>
         </div>
-        <a href="https://bakkerywebsite.vercel.app/" class="link">live site link →</a>
+       <a href="https://bakkerywebsite.vercel.app/" class="link">live site link →</a>
       </div>
 
       <div class="project">
@@ -449,9 +449,11 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   document.querySelectorAll('[data-target]').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const target = document.getElementById(this.getAttribute('data-target'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    btn.addEventListener('click', function(e) {
+      if (this.tagName !== 'A') {
+        const target = document.getElementById(this.getAttribute('data-target'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
 </script>
